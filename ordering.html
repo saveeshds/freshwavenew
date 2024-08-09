@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Order</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins';
+        }
+
+        body {
+            background-color: #e09082;
+            background-image: linear-gradient(315deg, #e09082 0%, #f8dba4 74%);
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4d9559;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #4d9559;
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.2em;
+            color: #4d9559;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #4d9559;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #27a770;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #4d9559;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        thead {
+            background-color: #4d9559;
+            color: white;
+        }
+
+        tfoot {
+            font-weight: bold;
+        }
+
+        #totalPrice {
+            color: #4d9559;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Groceries</h1>
+
+    <form id="groceryForm">
+        <h2>Fruits</h2>
+        <!-- Example fruit options -->
+        <div>
+            <label for="Watermelon">Watermelon (g):</label>
+            <input type="number" id="Watermelon" data-name="Watermelon" data-price=".7" step="100" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Banana">Banana (g):</label>
+            <input type="number" id="Banana" data-name="Banana" data-price="2.00" step="100" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Grapes">Grapes (g):</label>
+            <input type="number" id="Grapes" data-name="Grapes" data-price="2.00" step="100" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Orange">Orange (g):</label>
+            <input type="number" id="Orange" data-name="Orange" data-price="2.00" step="100" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Strawberry">Strawberry (g):</label>
+            <input type="number" id="Strawberry" data-name="Strawberry" data-price="2.00" step="100" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Peach">Peach (g):</label>
+            <input type="number" id="Peach" data-name="Peach" data-price="2.00" step="100" min="0" placeholder="g">
+        </div>
+        <!-- Add more fruit options -->
+
+        <h2>Vegetables</h2>
+        <!-- Example vegetable options -->
+        <div>
+            <label for="carrot">Carrot (g):</label>
+            <input type="number" id="carrot" data-name="Carrot" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Eggplant">Eggplant (g):</label>
+            <input type="number" id="Eggplant" data-name="Eggplant" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Potato">Potato (g):</label>
+            <input type="number" id="Potato" data-name="Potato" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Bell Pepper">Bell Pepper (g):</label>
+            <input type="number" id="Bell Pepper" data-name="Bell Pepper" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Pumpkin">Pumpkin (g):</label>
+            <input type="number" id="Pumpkin" data-name="Pumpkin" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Tomato">Tomato (g):</label>
+            <input type="number" id="Tomato" data-name="Tomato" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <!-- Add more vegetable options -->
+
+        <h2>Dairy Produce</h2>
+        <!-- Example dairy options -->
+        <div>
+            <label for="Fresh Milk">Fresh Milk (L):</label>
+            <input type="number" id="Fresh Milk" data-name="Fresh Milk" data-price="1.20" step="0.01" min="0" placeholder="Liter">
+        </div>
+        <div>
+            <label for="Ice Cream">Ice Cream (L):</label>
+            <input type="number" id="Ice Cream" data-name="Ice Cream" data-price="1.20" step="0.01" min="0" placeholder="Liter">
+        </div>
+        <div>
+            <label for="Whipped Cream">Whipped Cream (L):</label>
+            <input type="number" id="Whipped Cream" data-name="Whipped Cream" data-price="1.20" step="0.01" min="0" placeholder="Liter">
+        </div>
+        <div>
+            <label for="Butter">Butter (g):</label>
+            <input type="number" id="Butter" data-name="Butter" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Cheese">Cheese (g):</label>
+            <input type="Cheese" id="Cheese" data-name="Cheese" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Yogurt">Yogurt (Cups):</label>
+            <input type="number" id="Yogurt" data-name="Yogurt" data-price="1.50" step="1" min="0" placeholder="Cups">
+        </div>
+        <!-- Add more dairy options -->
+
+        <h2>Meat and Seafood</h2>
+        <div>
+            <label for="Beef">Beef (g):</label>
+            <input type="Beef" id="Beef" data-name="Beef" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Chicken">Chicken (g):</label>
+            <input type="Chicken" id="Chicken" data-name="Chicken" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Salmon">Salmon (g):</label>
+            <input type="Salmon" id="Salmon" data-name="Salmon" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Pork">Pork (g):</label>
+            <input type="Pork" id="Pork" data-name="Pork" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Prawns">Prawns (g):</label>
+            <input type="Prawns" id="Prawns" data-name="Prawns" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Sausages">Sausages (g):</label>
+            <input type="Sausages" id="Sausages" data-name="Sausages" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <!-- Example meat and seafood options -->
+        <!-- Add more meat and seafood options -->
+
+        <h2>Baking and Cooking Ingredients</h2>
+        <!-- Example baking and cooking ingredients -->
+        <div>
+            <label for="Sugar">Sugar (kg):</label>
+            <input type="number" id="Sugar" data-name="Sugar" data-price="2.50" step="0.01" min="0" placeholder="Kg">
+        </div>
+        <div>
+            <label for="Sugar">Sugar (kg):</label>
+            <input type="number" id="Sugar" data-name="Sugar" data-price="2.50" step="0.01" min="0" placeholder="Kg">
+        </div>
+        <div>
+            <label for="Rice">Rice (kg):</label>
+            <input type="number" id="Rice" data-name="Rice" data-price="2.50" step="0.01" min="0" placeholder="Kg">
+        </div>
+        <div>
+            <label for="Baking Soda">Baking Soda (g):</label>
+            <input type="Prawns" id="Baking Soda" data-name="Baking Soda" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <div>
+            <label for="Black Pepper">Sausages (g):</label>
+            <input type="Black Pepper" id="Black Pepper" data-name="Black Pepper" data-price="1.50" step="0.01" min="0" placeholder="g">
+        </div>
+        <!-- Add more baking and cooking ingredients -->
+
+        <button type="button" onclick="addToCart()">Add to Cart</button>
+        <button type="button" onclick="buyNow()">Buy Now</button>
+        <button type="button" onclick="addToFavourites()">Add to Favourites</button>
+        <button type="button" onclick="applyFavourites()">Apply Favourites</button>
+    </form>
+
+    <!-- Table to show current items and prices -->
+    <table id="cartTable">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity/Weight</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Items will be added dynamically here -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total</td>
+                <td id="totalPrice">Rs0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
